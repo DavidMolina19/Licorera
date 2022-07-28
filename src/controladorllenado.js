@@ -3,7 +3,7 @@ let productosBD= [
         nombre:"aguardiente antioqueño",
         precio:55000,
         cantidad:0,
-        foto:['https://firebasestorage.googleapis.com/v0/b/molinatiendatcc.appspot.com/o/guaro.webp?alt=media&token=b2290639-a3be-4c3a-9c7e-2667a0dc39e0','https://firebasestorage.googleapis.com/v0/b/molinatiendatcc.appspot.com/o/guaro.webp?alt=media&token=b2290639-a3be-4c3a-9c7e-2667a0dc39e0',"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWiI32oaWqBudbBAgcFkveRHzlfVuTwoJ34w&usqp=CAU"],
+        foto:['https://firebasestorage.googleapis.com/v0/b/molinatiendatcc.appspot.com/o/guaro.webp?alt=media&token=b2290639-a3be-4c3a-9c7e-2667a0dc39e0','https://firebasestorage.googleapis.com/v0/b/molinatiendatcc.appspot.com/o/guaro.webp?alt=media&token=b2290639-a3be-4c3a-9c7e-2667a0dc39e0',"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWiI32oaWqBudbBAgcFkveRHzlfVuTwoJ34w&usqp=CAU","https://carulla.vtexassets.com/arquivos/ids/2970926/Aguardiente-Antioqueno-Sin-Azucar-En-Botella-X-750ml-371060_a.jpg?v=637443998969700000"],
         descripcion:'aguardiente antioqueño, el aguardiente de la gente '
     },
     {
@@ -27,7 +27,7 @@ let productosBD= [
          nombre:' cerveza smirnoff',
         precio:8000,
         cantidad:18,
-        foto:['https://restaurante.231e.com/wp-content/uploads/2020/12/producto-cervesa-smirnoff.png','image.png'],
+        foto:['https://restaurante.231e.com/wp-content/uploads/2020/12/producto-cervesa-smirnoff.png','https://garabatosdistribuciones.com/wp-content/uploads/2021/01/smirnoff-original.png'],
         descripcion:'cerveza de vodka'
     },
     {
@@ -93,7 +93,7 @@ let productosBD= [
         nombre:'old parr',
         precio:120000,
         cantidad:23,
-        foto:['https://cdn.shopify.com/s/files/1/0335/3663/9116/products/unnamed_8_2491af3b-52d0-486e-b7f5-1c6540d70561_800x.jpg?v=1607175674'],
+        foto:['https://cdn.shopify.com/s/files/1/0335/3663/9116/products/unnamed_8_2491af3b-52d0-486e-b7f5-1c6540d70561_800x.jpg?v=1607175674','https://elamigodelanoche.com/wp-content/uploads/2019/10/whisky-18-old-parr.jpg'],
         descripcion:'Whisky de origen Alberbury, Reino Unido'
     },
      
@@ -102,14 +102,14 @@ let productosBD= [
         nombre:'red bull',
         precio:11000,
         cantidad:30,
-        foto:['https://media.istockphoto.com/photos/aluminium-can-of-red-bull-energy-drink-iced-background-picture-id537022544?k=20&m=537022544&s=612x612&w=0&h=r5OPbtcVPAxBkmnkyfczQwxfbFH9beInZeea0xxjoiM='],
+        foto:['https://media.istockphoto.com/photos/aluminium-can-of-red-bull-energy-drink-iced-background-picture-id537022544?k=20&m=537022544&s=612x612&w=0&h=r5OPbtcVPAxBkmnkyfczQwxfbFH9beInZeea0xxjoiM=','https://toctocdelivery.co/wp-content/uploads/2022/06/red-bull-sandia-domicilio-delivery-colombia-medellin.png'],
         descripcion:'Es un energizante fundado en los años 1980'
     },
     {
         nombre:'mosnter',
         precio:10000,
         cantidad:40,
-        foto:['https://i.pinimg.com/originals/d4/65/6a/d4656abf5f9a2a55afa45e8604aea3d8.jpg','image.png'],
+        foto:['https://i.pinimg.com/originals/d4/65/6a/d4656abf5f9a2a55afa45e8604aea3d8.jpg','https://bubbleroma.it/wp-content/uploads/2022/01/MONSTER-ULTRA-GOLD.jpg'],
         descripcion:'Es un energizante fundado en los años 1935'
     }
     
@@ -134,6 +134,17 @@ productosBD.forEach(function(producto){
 
     let precioProducto=document.createElement("p")
     precioProducto.textContent='$'+producto.precio+'COP'
+
+    columna.addEventListener("mouseover",function(){
+        fotoProducto.src=producto.foto[1]
+      })
+       
+      columna.addEventListener("mouseleaver",function(){
+        fotoProducto.src=producto.foto[0]
+      })
+      columna.addEventListener("mouseleaver",function(){
+        fotoProducto.src=producto.foto[1]
+      })
 
     let DescripcionProducto=document.createElement("p")
     DescripcionProducto.textContent=producto.descripcion
